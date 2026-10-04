@@ -1,0 +1,49 @@
+{
+    "name": "smronju/nativephp-purchases",
+    "description": "One-time in-app purchases (non-consumables like \"Remove Ads\") with restore, via Google Play Billing and StoreKit 2 — no server, no receipt validation backend.",
+    "version": "1.0.0",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "homepage": "https://github.com/smronju/nativephp-purchases",
+    "keywords": ["nativephp", "mobile", "laravel", "in-app-purchase", "iap", "billing", "storekit", "remove-ads"],
+    "authors": [
+        {
+            "name": "Mohammad Shoriful Islam Ronju",
+            "email": "smronju@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/smronju/nativephp-purchases/issues",
+        "source": "https://github.com/smronju/nativephp-purchases"
+    },
+    "require": {
+        "php": "^8.2",
+        "nativephp/mobile": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smronju\\NativephpPurchases\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smronju\\NativephpPurchases\\PurchasesServiceProvider"
+            ]
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.0"
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

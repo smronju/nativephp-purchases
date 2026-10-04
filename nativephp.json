@@ -1,0 +1,81 @@
+{
+    "name": "smronju/nativephp-purchases",
+    "version": "1.0.0",
+    "description": "One-time in-app purchases (non-consumables like \"Remove Ads\") with restore, via Google Play Billing and StoreKit 2 — no server, no receipt validation backend.",
+    "namespace": "Purchases",
+    "keywords": ["nativephp", "mobile", "in-app-purchase", "iap", "billing", "storekit", "remove-ads"],
+    "category": "utilities",
+    "license": "MIT",
+    "pricing": {
+        "type": "free"
+    },
+    "author": {
+        "name": "Mohammad Shoriful Islam Ronju",
+        "email": "smronju@gmail.com",
+        "url": "https://github.com/smronju"
+    },
+    "homepage": "https://github.com/smronju/nativephp-purchases",
+    "repository": "https://github.com/smronju/nativephp-purchases",
+    "funding": [],
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "icon": "resources/icon.png",
+    "screenshots": [],
+    "bridge_functions": [
+        {
+            "name": "Purchases.GetProducts",
+            "android": "com.smronju.plugins.nativephp_purchases.PurchasesFunctions.GetProducts",
+            "ios": "PurchasesFunctions.GetProducts",
+            "description": "Look up store details (localized title and price) for one-time products; the result arrives via the ProductsLoaded event"
+        },
+        {
+            "name": "Purchases.Purchase",
+            "android": "com.smronju.plugins.nativephp_purchases.PurchasesFunctions.Purchase",
+            "ios": "PurchasesFunctions.Purchase",
+            "description": "Start the store's purchase sheet for a one-time product; the outcome arrives via PurchaseCompleted or PurchaseFailed"
+        },
+        {
+            "name": "Purchases.Restore",
+            "android": "com.smronju.plugins.nativephp_purchases.PurchasesFunctions.Restore",
+            "ios": "PurchasesFunctions.Restore",
+            "description": "List the one-time products this store account owns; the result arrives via the PurchasesRestored event"
+        }
+    ],
+    "android": {
+        "min_version": 23,
+        "permissions": [],
+        "repositories": [],
+        "dependencies": {
+            "implementation": [
+                "com.android.billingclient:billing:9.1.0"
+            ]
+        },
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "ios": {
+        "min_version": "15.0",
+        "permissions": [],
+        "repositories": [],
+        "dependencies": {
+            "swift_packages": [],
+            "pods": []
+        }
+    },
+    "assets": {
+        "android": [],
+        "ios": []
+    },
+    "secrets": [],
+    "events": [
+        "Smronju\\NativephpPurchases\\Events\\ProductsLoaded",
+        "Smronju\\NativephpPurchases\\Events\\PurchaseCompleted",
+        "Smronju\\NativephpPurchases\\Events\\PurchaseFailed",
+        "Smronju\\NativephpPurchases\\Events\\PurchasesRestored"
+    ],
+    "service_provider": "Smronju\\NativephpPurchases\\PurchasesServiceProvider"
+}
